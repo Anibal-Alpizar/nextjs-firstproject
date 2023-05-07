@@ -9,14 +9,7 @@ async function fetchUsers() {
 async function IndexPage() {
   const users = await fetchUsers();
   console.log(users);
-  return (
-    <div>
-      <h1>My Page</h1>
-      <div>
-        <Users users={users} />
-      </div>
-    </div>
-  );
+  return <Users users={users} />;
 }
 
 export default IndexPage;
