@@ -1,10 +1,17 @@
-import React from "react";
+"use client";
+import { useRouter } from "next/navigation";
 
 function Users({ users }) {
+  const router = useRouter();
   return (
     <ul>
       {users.map((user) => (
-        <li>
+        <li
+          key={user.id}
+          onClick={() => {
+            router.push(`/users/${user.id}`);
+          }}
+        >
           <div key={user.id}>
             <h5>
               {user.id} {user.first_name} {user.last_name}
